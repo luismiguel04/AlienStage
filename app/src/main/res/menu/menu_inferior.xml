@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuSevicios"
+        android:title="Servicios" />
+    <item
+        android:id="@+id/menuNovedades"
+        android:title="Novedades" />
+    <item
+        android:id="@+id/menuHistorial"
+        android:title="Historial" />
+    <item
+        android:id="@+id/menuSoporte"
+        android:title="Soporte" />
+</menu>
