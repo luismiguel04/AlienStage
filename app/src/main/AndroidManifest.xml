@@ -13,6 +13,39 @@
         android:theme="@style/Theme.AlienStage"
         tools:targetApi="31">
         <activity
+            android:name=".EstatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PoliticasCancelacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PoliticasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PromocionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResenaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarServicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditarServicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PagoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FormularioServicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleServicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

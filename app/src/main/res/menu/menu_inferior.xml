@@ -3,14 +3,18 @@
 
     <item
         android:id="@+id/menuSevicios"
+        android:icon="@drawable/servicios"
         android:title="Servicios" />
     <item
         android:id="@+id/menuNovedades"
+        android:icon="@drawable/novedades"
         android:title="Novedades" />
     <item
         android:id="@+id/menuHistorial"
+        android:icon="@drawable/historial"
         android:title="Historial" />
     <item
         android:id="@+id/menuSoporte"
+        android:icon="@drawable/soporte"
         android:title="Soporte" />
 </menu>

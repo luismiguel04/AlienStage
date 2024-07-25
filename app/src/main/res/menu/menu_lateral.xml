@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuReseñas"
+        android:title="Reseñas" />
+    <item
+        android:id="@+id/menuStatus"
+        android:title="Status" />
+    <item
+        android:id="@+id/menuPromociones"
+        android:title="Promociones" />
+
+</menu>
