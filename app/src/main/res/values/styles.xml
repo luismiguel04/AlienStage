@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
 
+<resources>
+    <!-- Estilo para el TextInputLayout -->
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Custom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Solo mostrar la línea inferior por defecto -->
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
+    </style>
 
 </resources>
