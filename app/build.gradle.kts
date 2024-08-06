@@ -33,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    viewBinding{
+        enable=true
+    }
+    buildFeatures {
+        dataBinding= true
+    }
 }
 
 dependencies {
@@ -45,5 +51,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.loopj.android:android-async-http:1.4.9")
+    implementation("com.google.code.gson:gson:2.8.9")
 
 }
