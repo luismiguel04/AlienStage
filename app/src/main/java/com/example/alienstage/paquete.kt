@@ -8,5 +8,5 @@ data class paquete (
     val foto: String,
     val resena: String,
     val estatus: String,
-    val idservicio: Int
+
 )

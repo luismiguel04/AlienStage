@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide
 import com.example.alienstage.DetalleServicioActivity
 import com.example.alienstage.databinding.ItemServicioBinding
 import com.example.alienstage.paquete
+import java.text.NumberFormat
+import java.util.Locale
 
 class PaquetesViewHolder(view: View): RecyclerView.ViewHolder(view){
 
@@ -21,8 +23,10 @@ class PaquetesViewHolder(view: View): RecyclerView.ViewHolder(view){
         binding.tvidServicio.text= ServicioModel.idPaquete.toString()
         binding.tvNombre.text =ServicioModel.nombre
         binding.tvDescripcion.text =ServicioModel.descripcion
-        //binding.tvDescripcion.text =ServicioModel.precio.toString()
-        //binding.tvDescripcion.text =ServicioModel.idservicio.toString()
+        //binding.tvPrecio.text =ServicioModel.precio.toString()
+        val formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault())
+        val precioFormateado = formatoMoneda.format(ServicioModel.precio)
+        binding.tvPrecio.text = precioFormateado
         //binding.tvEstatus.text=ServicioModel.resena
         binding.tvEstatus.text=ServicioModel.estatus
         Glide.with(binding.ivImagen.context).load(ServicioModel.foto).into(binding.ivImagen)

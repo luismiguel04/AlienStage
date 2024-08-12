@@ -9,5 +9,8 @@
     <item
         android:id="@+id/menuPromociones"
         android:title="Promociones" />
+    <item
+        android:id="@+id/menuListaSoporte"
+        android:title="Mis Soportes" />
 
 </menu>

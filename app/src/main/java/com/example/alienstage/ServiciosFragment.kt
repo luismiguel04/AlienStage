@@ -33,6 +33,7 @@ class ServiciosFragment : Fragment(R.layout.fragment_servicios) {
     private val arrayList = ArrayList<paquete>()
     private val displayList = ArrayList<paquete>()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,11 +64,11 @@ class ServiciosFragment : Fragment(R.layout.fragment_servicios) {
                     val descripcion = jsonObject.getString("descripcion")
                     val precio = jsonObject.getDouble("precio")
                     val foto = jsonObject.getString("foto")
-                    val resena = jsonObject.getString("reseña")
+                    val resena = jsonObject.getString("reseñas")
                     val estatus = jsonObject.getString("estatus")
-                    val idservicio = jsonObject.getInt("idservicio")
 
-                    arrayList.add(paquete(id, nombre, descripcion, precio, foto, resena, estatus, idservicio))
+
+                    arrayList.add(paquete(id, nombre, descripcion, precio, foto, resena, estatus))
                 }
                 displayList.addAll(arrayList)
 

@@ -4,18 +4,175 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SoporteFragment">
+    tools:context=".SopoteFragment">
 
 
-    <TextView
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Soporte"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blaco"
+                android:orientation="vertical">
+
+                <!-- Media -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/logo"
+                    android:scaleType="centerCrop" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="soporte"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Para brindarle mejor servicio proporcione la siguente información"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ccorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCorreo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            app:startIconTint="@color/blaco"
+                            android:drawablePadding="5dp"
+                            android:hint="Correo" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cSituacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etSituacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:startIconTint="@color/blaco"
+                            android:drawablePadding="5dp"
+                            android:hint="situacion" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/Cdescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDescripcion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:startIconTint="@color/blaco"
+                            android:drawablePadding="5dp"
+                            android:hint="Descripcion" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFecha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="date"
+                            android:hint="Fecha"
+                            android:focusable="false" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnCapturarEvidencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Capturar Evidencia"
+                        app:icon="@drawable/baseline_camera_alt_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAgregar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Enviar"
+                        app:icon="@drawable/send_24px"
+                        app:iconGravity="textEnd"
+                        style="?attr/borderlessButtonStyle"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Main content -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/mdi__whatsapp"
+        app:backgroundTint="#24CC2B"
+        app:tint="@color/blaco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

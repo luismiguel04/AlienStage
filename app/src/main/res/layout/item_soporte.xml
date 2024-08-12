@@ -18,7 +18,7 @@
             android:orientation="horizontal"
             android:padding="5dp">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivImagen"
+                android:id="@+id/ivEvidencia"
                 android:layout_width="80dp"
                 android:layout_height="80dp"/>
 
@@ -29,43 +29,34 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/tvidServicio"
+                    android:id="@+id/tvCorreo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="15dp"
-                    android:text="Id"
+                    android:text="correo"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tvNombre"
+                    android:id="@+id/tvSituacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="15dp"
-                    android:text="Nombre"
+                    android:text="Situacion"
                     />
-                <TextView
-                    android:id="@+id/tvDescripcion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="Descripcion"
-                    />
-
 
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tvPrecio"
+                android:id="@+id/tvDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="15dp"
                 android:textAlignment="center"
-                android:text="Precio" />
+                android:text="Descripcion" />
 
 
         </LinearLayout>
@@ -75,12 +66,12 @@
             android:background="@drawable/fondo_gradient">
 
             <TextView
-                android:id="@+id/tvEstatus"
+                android:id="@+id/tvFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="15dp"
-                android:text="Estatus"
+                android:text="Fecha"
                 android:textAlignment="viewEnd"
                 android:textSize="20sp"
                 android:paddingEnd="15dp"

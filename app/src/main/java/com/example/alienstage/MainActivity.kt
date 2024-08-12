@@ -1,6 +1,8 @@
 package com.example.alienstage
 
+import SoporteFragment
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,11 +15,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        // Obtener el Intent y el id del usuario
+        val intent = intent
+        val userId = intent.getStringExtra("USER_ID")
 
-        val soporteFragment = SoporteFragment()
+        val soporteFragment = SoporteFragment().apply {
+            arguments = Bundle().apply {
+                putString("USER_ID", userId) // Asume que `userId` es el ID que pasas
+            }
+        }
         val novedadesFragment = NovedadesFragment()
         val serviciosFragment = ServiciosFragment()
-        val historialFragment = HistorialFragment()
+        val historialFragment = HistorialFragment().apply {
+            arguments = Bundle().apply {
+                putString("USER_ID", userId) // Asume que `userId` es el ID que pasas
+            }
+        }
         val bottomNavigationView :BottomNavigationView =findViewById(R.id.bottomNavigationView)
 
 
