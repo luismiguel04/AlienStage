@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    >
+    <item
+        android:id="@+id/menuStatus"
+        android:title="Mi cuenta" />
     <item
         android:id="@+id/menuReseñas"
         android:title="Reseñas" />
-    <item
-        android:id="@+id/menuStatus"
-        android:title="Status" />
-    <item
-        android:id="@+id/menuPromociones"
-        android:title="Promociones" />
+
     <item
         android:id="@+id/menuListaSoporte"
         android:title="Mis Soportes" />
+    <item
+        android:id="@+id/menuCerrarSecion"
+        android:title="Cerrar sesión" />
 
 </menu>

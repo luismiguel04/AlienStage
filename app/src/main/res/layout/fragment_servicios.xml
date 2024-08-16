@@ -7,23 +7,53 @@
     tools:context=".ServiciosFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Servicios"
-        android:textAlignment="center"
+        android:outlineAmbientShadowColor="@color/light_blue"
+        android:outlineSpotShadowColor="@color/light_blue"
+        android:splitMotionEvents="false"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+        app:barrierMargin="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/light_blue"
+        app:titleTextColor="@color/light_blue">
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="@color/light_blue"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Astage"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            />
+    </com.google.android.material.appbar.MaterialToolbar>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvservicios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

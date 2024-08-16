@@ -17,29 +17,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="5dp">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivEvidencia"
-                android:layout_width="80dp"
-                android:layout_height="80dp"/>
-
 
             <LinearLayout
                 android:id="@+id/llvertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
                 <TextView
-                    android:id="@+id/tvSituacion"
+                    android:id="@+id/tvTiponovedad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:textSize="20sp"
-                    android:textColor="@color/black"
                     android:layout_marginLeft="15dp"
-                    android:text="Situacion"
-                    />
+                    android:text="tipo de novedad"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/tvDescripcion"
                     android:layout_width="wrap_content"
@@ -47,45 +40,47 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="15dp"
                     android:text="Descripcion"
-                    android:textAlignment="center" />
-                <TextView
-                    android:id="@+id/tvCorreo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="correo"
                     />
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:id="@+id/tvEstatus"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="15dp"
-                    android:text="Estatus"
-                    />
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Nivel: "/>
+                    <TextView
+                        android:id="@+id/tvNivel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Nivel"
+                        />
+
+                </LinearLayout>
+
 
 
             </LinearLayout>
-
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:background="@color/colorPrimary">
+            android:background="@drawable/fondo_gradient">
 
             <TextView
-                android:id="@+id/tvFecha"
+                android:id="@+id/tvEstatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="15dp"
-                android:text="Fecha"
-                android:textColor="@color/light_blue"
+                android:text="Estatus"
                 android:textAlignment="viewEnd"
+                android:textColor="@color/light_blue"
                 android:textSize="20sp"
                 android:paddingEnd="15dp"
                 android:textStyle="bold" />

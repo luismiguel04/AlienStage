@@ -56,5 +56,7 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.loopj.android:android-async-http:1.4.9")
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation ("androidx.biometric:biometric:1.2.0-alpha03")
+
 
 }

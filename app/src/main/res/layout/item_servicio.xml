@@ -7,6 +7,16 @@
     android:layout_margin="10dp"
     app:cardElevation="6dp">
 
+
+    <!-- Icono en la parte superior derecha -->
+        <ImageView
+            android:id="@+id/ivIcono"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:src="@drawable/logo" /> <!-- Reemplaza con tu ícono -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,24 +38,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tvidServicio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="Id"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvNombre"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="Nombre"
-                    />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvidServicio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:text="Id"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="Nombre"
+                        />
+
+                </LinearLayout>
+
+
+
                 <TextView
                     android:id="@+id/tvDescripcion"
                     android:layout_width="wrap_content"
@@ -58,38 +82,46 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvPrecio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="15dp"
-                android:textAlignment="center"
-                android:text="Precio" />
+
 
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:background="@drawable/fondo_gradient">
+            android:background="@color/colorPrimary">
+
 
             <TextView
                 android:id="@+id/tvEstatus"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="15dp"
                 android:text="Estatus"
-                android:textAlignment="viewEnd"
+                android:textAlignment="center"
                 android:textSize="20sp"
-                android:paddingEnd="15dp"
+
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvPrecio"
+                android:paddingStart="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingEnd="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/light_blue"
+                android:textSize="20dp"
+                android:textAlignment="viewEnd"
+
+                android:text="Precio" />
 
 
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 

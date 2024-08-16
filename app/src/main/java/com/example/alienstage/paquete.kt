@@ -3,6 +3,7 @@ package com.example.alienstage
 data class paquete (
     val idPaquete: Int,
     val nombre: String,
+    val horas:String,
     val descripcion: String,
     val precio: Double,
     val foto: String,

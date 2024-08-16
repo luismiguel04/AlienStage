@@ -56,6 +56,7 @@
 
 
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
     </style>
 
     <style name="Theme.AlienStage" parent="Base.Theme.AlienStage" />
@@ -67,5 +68,35 @@
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
         <item name="colorPrimary">@color/light_blue</item>
         <item name="colorOnPrimary">@color/azulprimario</item>
+
+
+    </style>
+
+
+
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu">
+       <!-- Cambia el color de fondo del menú aquí -->
+        <item name="android:cacheColorHint">@color/light_blue</item>
+
+
+        <item name="android:colorForeground">@color/light_blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:background">@color/light_blue</item><!-- Cambia el color del texto del menú aquí -->
+        <item name="android:dropDownListViewStyle">@style/CustomDropDownListView</item>
+    </style>
+    <!-- Estilo para la lista desplegable del menú emergente -->
+    <style name="CustomDropDownListView" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="colorControlNormal">@color/light_blue</item>
+        <item name="colorPrimaryVariant">@color/design_default_color_on_primary</item>
+        <item name="android:colorForeground">@color/light_blue</item>
+
+    </style>
+
+    <!-- Estilo para los ítems del menú -->
+    <style name="CustomPopupMenuItem" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:background">@color/transparent</item> <!-- Fondo transparente para los ítems -->
+
     </style>
 </resources>

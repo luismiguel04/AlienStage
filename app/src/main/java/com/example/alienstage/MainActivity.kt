@@ -24,8 +24,16 @@ class MainActivity : AppCompatActivity() {
                 putString("USER_ID", userId) // Asume que `userId` es el ID que pasas
             }
         }
-        val novedadesFragment = NovedadesFragment()
-        val serviciosFragment = ServiciosFragment()
+        val novedadesFragment = NovedadesFragment().apply {
+            arguments = Bundle().apply {
+                putString("USER_ID", userId) // Asume que `userId` es el ID que pasas
+            }
+        }
+        val serviciosFragment = ServiciosFragment().apply {
+            arguments = Bundle().apply {
+                putString("USER_ID", userId) // Asume que `userId` es el ID que pasas
+            }
+        }
         val historialFragment = HistorialFragment().apply {
             arguments = Bundle().apply {
                 putString("USER_ID", userId) // Asume que `userId` es el ID que pasas

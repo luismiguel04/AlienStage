@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var telefono:TextView
     private lateinit var contrasena :TextView
     private lateinit var login : Button
-    private val url = "http://192.168.0.106/"
+    private val url = "https://ladetechnologies.com/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,8 +66,14 @@ class LoginActivity : AppCompatActivity() {
                                     val primerContacto = contacto.getJSONObject(0)
                                     val id =(primerContacto.getString("idWeb"))
                                     val nombre =(primerContacto.getString("nombre"))
+                                    val apellido =(primerContacto.getString("apellido"))
+                                    val correo =(primerContacto.getString("correo"))
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                     intent.putExtra("USER_ID", id)
+                                    GlobalData.nombreusuario = nombre
+                                    GlobalData.idWeb = id
+                                    GlobalData.apellido = apellido
+                                    GlobalData.correo = correo
                                     startActivity(intent)
                                     Toast.makeText(
                                         this@LoginActivity,

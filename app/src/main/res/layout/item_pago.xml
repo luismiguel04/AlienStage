@@ -1,0 +1,128 @@
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardElevation="6dp">
+
+
+        <!-- Icono en la parte superior derecha -->
+        <ImageView
+            android:id="@+id/ivIcono"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="10dp"
+            android:src="@drawable/logo" /> <!-- Reemplaza con tu ícono -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blaco"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivImagen"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+
+                <LinearLayout
+                    android:id="@+id/llvertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/tvidServicio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/black"
+                            android:text="Id"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:text="Nombre"
+                            />
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/tvDescripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="Descripcion"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/colorPrimary">
+
+
+                <TextView
+                    android:id="@+id/tvEstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Estatus"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvPrecio"
+                    android:paddingStart="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:paddingEnd="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_blue"
+                    android:textSize="20dp"
+                    android:textAlignment="viewEnd"
+
+                    android:text="Precio" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>

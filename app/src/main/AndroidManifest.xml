@@ -24,6 +24,12 @@
         android:theme="@style/Theme.AlienStage"
         tools:targetApi="31">
         <activity
+            android:name=".ListaResenasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleSoportesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListaSoporteActivity"
             android:exported="false" />
         <activity
@@ -71,6 +77,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.alienstage.fileprovider"

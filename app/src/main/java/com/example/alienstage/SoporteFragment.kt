@@ -17,6 +17,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
@@ -25,7 +26,12 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.alienstage.EstatusActivity
+import com.example.alienstage.ListaSoporteActivity
+import com.example.alienstage.LoginActivity
+import com.example.alienstage.PromocionesActivity
 import com.example.alienstage.R
+import com.example.alienstage.ResenaActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import java.io.ByteArrayOutputStream
@@ -37,6 +43,9 @@ import java.util.Locale
 
 class SoporteFragment : Fragment(R.layout.fragment_soporte) {
 
+
+    private lateinit var nombre: EditText
+    private lateinit var apellido: EditText
     private lateinit var correo: EditText
     private lateinit var situacion: EditText
     private lateinit var descripcion: EditText
@@ -44,7 +53,7 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
     private lateinit var btnCapturarEvidencia: Button
     private lateinit var btnAgregar: Button
     private lateinit var requestQueue: RequestQueue
-    private val url = "http://192.168.0.106/"
+    private val url = "https://ladetechnologies.com/"
 
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_CAMERA_PERMISSION = 2
@@ -61,8 +70,50 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
         // Recupera el ID del Bundle
         userId = arguments?.getString("USER_ID").toString()
 
+
+        val toolbar: Toolbar = view.findViewById(R.id.toolbar)
+        toolbar.inflateMenu(R.menu.menu_lateral)  // Infla el menú en el Toolbar
+
+        // Manejar las opciones del menú
+        toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menuReseñas -> {
+                    val intent =
+                        Intent(requireContext(), ResenaActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menuStatus -> {
+                    val intent =
+                        Intent(requireContext(), EstatusActivity::class.java).apply {
+                            putExtra("USER_ID", userId) // Pasa el userId al Intent
+                        }
+                    startActivity(intent)
+                    true
+                }
+                R.id.menuListaSoporte -> {
+                    val intent =
+                        Intent(requireContext(), ListaSoporteActivity::class.java).apply {
+                            putExtra("USER_ID", userId) // Pasa el userId al Intent
+                        }
+                    startActivity(intent)
+                    true
+                }
+                R.id.menuCerrarSecion -> {
+                    val intent =
+                        Intent(requireContext(), LoginActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+
+
         // Inicializa las vistas
         btnAgregar = view.findViewById(R.id.btnAgregar)
+        nombre = view.findViewById(R.id.etNombre)
+        apellido= view.findViewById(R.id.etApellido)
         correo = view.findViewById(R.id.etCorreo)
         situacion = view.findViewById(R.id.etSituacion)
         descripcion = view.findViewById(R.id.etDescripcion)
@@ -160,6 +211,7 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
         val calendar = Calendar.getInstance()
         val datePickerDialog = DatePickerDialog(
             requireContext(),
+            R.style.CustomDatePickerDialog,
             { _, year, month, dayOfMonth ->
                 calendar.set(year, month, dayOfMonth)
                 val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
@@ -172,24 +224,24 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
         datePickerDialog.show()
     }
 
-
-
     private fun agregarContacto() {
+        val nombreText = nombre.text.toString()
+        val apellidoText = apellido.text.toString()
         val correoText = correo.text.toString()
         val descripcionText = descripcion.text.toString()
         val situacionText = situacion.text.toString()
         val fechaText = fecha.text.toString()
 
-        if (correoText.isNotEmpty() && descripcionText.isNotEmpty() && situacionText.isNotEmpty() && fechaText.isNotEmpty()) {
+        if (nombreText.isNotEmpty() && apellidoText.isNotEmpty() && correoText.isNotEmpty() && descripcionText.isNotEmpty() && situacionText.isNotEmpty() && fechaText.isNotEmpty()) {
             val url = "${this.url}insercionsoporte.php"
-            ejecutarWebService(url, correoText, situacionText, descripcionText, fechaText, currentPhotoPath,userId)
+            ejecutarWebService(url,nombreText,apellidoText, correoText, situacionText, descripcionText, fechaText, currentPhotoPath,userId)
             limpiarCampos()
         } else {
             Toast.makeText(requireContext(), "Todos los campos son obligatorios.", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun ejecutarWebService(url: String, correo: String, situacion: String, descripcion: String, fecha: String, evidencia: String, idweb:String) {
+    private fun ejecutarWebService(url:String,nombre:String ,apellido: String ,correo: String, situacion: String, descripcion: String, fecha: String, evidencia: String, idweb:String) {
         val stringRequest = object : StringRequest(
             Request.Method.POST, url,
             { response ->
@@ -202,11 +254,14 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
             }) {
             override fun getParams(): MutableMap<String, String> {
                 val params = HashMap<String, String>()
+                params["nombre"] = nombre
+                params["apellido"] = apellido
                 params["correo"] = correo
                 params["situacion"] = situacion
                 params["descripcion"] = descripcion
                 params["fecha"] = fecha
                 params["evidencia"] = evidencia
+                params["estatus"] = "Nuevo"
                 params["idweb"] = userId
                 return params
             }
@@ -216,6 +271,8 @@ class SoporteFragment : Fragment(R.layout.fragment_soporte) {
 
 
     private fun limpiarCampos() {
+        nombre.setText("")
+        apellido.setText("")
         correo.setText("")
         descripcion.setText("")
         situacion.setText("")

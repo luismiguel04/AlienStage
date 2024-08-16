@@ -8,88 +8,358 @@
     </data>
 
 
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
-
         tools:context=".DetalleServicioActivity">
 
-        <ImageView
+
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="@color/light_blue"
+            android:outlineSpotShadowColor="@color/light_blue"
+            android:splitMotionEvents="false"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+            app:barrierMargin="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitleTextColor="@color/light_blue"
+            app:titleTextColor="@color/light_blue">
+
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="@color/light_blue"
+                android:clickable="true"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Astage"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/light_blue"
+                />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivServicio"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            tools:src="@drawable/logo"
-            android:layout_marginTop="50dp"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
 
         <LinearLayout
+            android:id="@+id/llpaquete"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:layout_height="wrap_content">
+            app:layout_constraintBottom_toTopOf="@+id/btnContratar"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivServicio">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/black"
+                android:gravity="center_horizontal"
+                app:cardBackgroundColor="@color/colorPrimary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvNombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="nombre"
+                        android:textAlignment="center"
+                        android:textColor="@color/blaco"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/tvIdServicio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="id"
-            android:textSize="24sp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tvNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="nombre"
-            android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/tvDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="descripcion"
-            android:textSize="18sp" />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horas del paquete:"
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvHoras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Horas"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvEstatus"
-            android:layout_width="match_parent"
-            android:textAlignment="center"
-            android:layout_height="wrap_content"
-            android:text="estatus"
-            android:textSize="18sp" />
+            </LinearLayout>
+
+
             <TextView
-                android:id="@+id/tvPrecio"
                 android:layout_width="match_parent"
-                android:textAlignment="center"
                 android:layout_height="wrap_content"
-                android:text="precio"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/tvResena"
-                android:layout_width="match_parent"
+                android:text="Descripción"
                 android:textAlignment="center"
-                android:layout_height="wrap_content"
-                android:text="reseña"
-                android:textSize="18sp" />
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogin"
+            <View
+                android:id="@+id/linea_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/card" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
-                android:layout_marginBottom="84dp"
-                android:text="Contratar"
-             />
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="descripcion"
+                    android:textAlignment="gravity"
+                    android:textSize="18sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="65dp"
+                    android:text="Estatus"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="65dp"
+                    android:text="Precio"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <View
+                    android:id="@+id/linea_horizontal2"
+                    android:layout_width="160dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@id/card" />
+
+                <View
+                    android:id="@+id/linea_horizontal3"
+                    android:layout_width="160dp"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@id/card" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tvEstatus"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="estatus"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvPrecio"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="precio"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:text="Reseñas "
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.466"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.333" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floating_action_button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        app:backgroundTint="@color/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/reviews_24px"
+                        app:tint="@color/blaco" />
+
+                    <TextView
+                        android:id="@+id/text_view_below_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="ver más"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/floating_action_button2"
+                        app:layout_constraintStart_toStartOf="@+id/floating_action_button2"
+                        app:layout_constraintTop_toBottomOf="@id/floating_action_button2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="16dp"
+                app:cardBackgroundColor="#E4DBE3">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+
+                    <TextView
+                        android:id="@+id/tvResena"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="reseña"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <!-- Icono en la esquina superior derecha -->
+
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
         </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContratar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginBottom="10dp"
+            android:text="Contratar"
+            android:textColor="@color/blaco"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
 
-    </LinearLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

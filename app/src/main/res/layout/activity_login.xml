@@ -44,6 +44,7 @@
             android:inputType="numberSigned"
             android:drawableStart="@drawable/phone_iphone_24px"
             app:startIconTint="@color/blaco"
+            android:textColor="@color/blaco"
             android:drawablePadding="5dp"
             android:hint="Teléfono" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -70,6 +71,7 @@
             android:drawablePadding="5dp"
             android:drawableStart="@drawable/lock_24px"
             app:startIconTint="@color/blue"
+            android:textColor="@color/blaco"
             android:hint="Contraseña" />
     </com.google.android.material.textfield.TextInputLayout>
 

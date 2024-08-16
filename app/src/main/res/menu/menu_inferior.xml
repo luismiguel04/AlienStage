@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
 
     <item
         android:id="@+id/menuSevicios"
         android:icon="@drawable/servicios"
-        android:title="Servicios" />
+        android:title="Paquetes" />
     <item
         android:id="@+id/menuNovedades"
         android:icon="@drawable/novedades"
@@ -12,7 +14,7 @@
     <item
         android:id="@+id/menuHistorial"
         android:icon="@drawable/historial"
-        android:title="Historial" />
+        android:title="Mis Servicios" />
     <item
         android:id="@+id/menuSoporte"
         android:icon="@drawable/soporte"

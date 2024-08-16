@@ -11,6 +11,7 @@ import com.example.alienstage.Soporte
 import com.example.alienstage.databinding.ItemSoporteBinding
 import kotlinx.coroutines.CoroutineStart
 import android.util.Base64
+import com.example.alienstage.DetalleSoportesActivity
 
 class SoportesViewHolder (view: View): RecyclerView.ViewHolder(view){
 
@@ -21,6 +22,8 @@ class SoportesViewHolder (view: View): RecyclerView.ViewHolder(view){
         binding.tvSituacion.text =ServicioModel.situacion
         binding.tvDescripcion.text =ServicioModel.descripcion
         binding.tvFecha.text =ServicioModel.fecha
+        binding.tvEstatus.text =ServicioModel.estatus
+
 
         fun decodeBase64ToBitmap(base64Str: String): Bitmap? {
             return try {
@@ -41,13 +44,15 @@ class SoportesViewHolder (view: View): RecyclerView.ViewHolder(view){
 
 
 
-            val intent = Intent(itemView.context, DetalleServicioActivity::class.java).apply {
-                putExtra("idservicio",ServicioModel.idSoporte.toString())
-                putExtra("nombre",ServicioModel.correo)
-                putExtra("precio",ServicioModel.situacion)
-                putExtra("estatus",ServicioModel.descripcion)
-                putExtra("descripcion",ServicioModel.fecha)
-                putExtra("resena",ServicioModel.evidencia)
+            val intent = Intent(itemView.context, DetalleSoportesActivity::class.java).apply {
+                putExtra("idsoporte",ServicioModel.idSoporte.toString())
+                putExtra("correo",ServicioModel.correo)
+                putExtra("situacion",ServicioModel.situacion)
+                putExtra("descripcion",ServicioModel.descripcion)
+                putExtra("fecha",ServicioModel.fecha)
+                putExtra("evidencia",ServicioModel.evidencia)
+                putExtra("estatus",ServicioModel.estatus)
+                putExtra("solucion",ServicioModel.solucion)
 
 
             }

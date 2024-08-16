@@ -2,10 +2,14 @@ package com.example.alienstage.adaptador
 
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.alienstage.DetalleServicioActivity
+import com.example.alienstage.R
 import com.example.alienstage.databinding.ItemServicioBinding
 import com.example.alienstage.paquete
 import java.text.NumberFormat
@@ -23,13 +27,30 @@ class PaquetesViewHolder(view: View): RecyclerView.ViewHolder(view){
         binding.tvidServicio.text= ServicioModel.idPaquete.toString()
         binding.tvNombre.text =ServicioModel.nombre
         binding.tvDescripcion.text =ServicioModel.descripcion
-        //binding.tvPrecio.text =ServicioModel.precio.toString()
+
         val formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault())
         val precioFormateado = formatoMoneda.format(ServicioModel.precio)
         binding.tvPrecio.text = precioFormateado
-        //binding.tvEstatus.text=ServicioModel.resena
+
         binding.tvEstatus.text=ServicioModel.estatus
-        Glide.with(binding.ivImagen.context).load(ServicioModel.foto).into(binding.ivImagen)
+        fun decodeBase64ToBitmap(base64Str: String): Bitmap? {
+            return try {
+                val decodedBytes = Base64.decode(base64Str, Base64.DEFAULT)
+                BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+            } catch (e: IllegalArgumentException) {
+                e.printStackTrace() // Puedes agregar un log para depuración
+                null
+            }
+        }
+
+        val bitmap = decodeBase64ToBitmap(ServicioModel.foto)
+        if (bitmap != null) {
+            binding.ivImagen.setImageBitmap(bitmap)
+        } else {
+            // Si la imagen no se puede decodificar, mostrar una imagen de marcador de posición
+            binding.ivImagen.setImageResource(R.drawable.preview) // Reemplaza con tu imagen de marcador de posición
+        }
+
 
         itemView.setOnClickListener {
             onClickListener(ServicioModel)
@@ -40,7 +61,10 @@ class PaquetesViewHolder(view: View): RecyclerView.ViewHolder(view){
                 putExtra("estatus",ServicioModel.estatus)
                 putExtra("descripcion",ServicioModel.descripcion)
                 putExtra("resena",ServicioModel.resena)
-                putExtra("imagen",ServicioModel.foto)
+                putExtra("horas",ServicioModel.horas)
+
+
+
 
             }
             itemView.context.startActivity(intent)

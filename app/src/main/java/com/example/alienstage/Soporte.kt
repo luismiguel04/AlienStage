@@ -6,5 +6,7 @@ class Soporte(
     val situacion: String,
     val descripcion: String,
     val fecha: String,
-    val evidencia: String
+    val evidencia: String,
+    val estatus:String,
+    val solucion:String
 )
